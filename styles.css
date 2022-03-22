@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    width: 100%;
+    height: auto;
+    background-color: #711A75;
+}
+.render{
+    background-color: #180A0A;
+    width: 80%;
+    min-height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.nav{
+    background-color: #711A75;
+    width: 20%;
+}
+main{
+    display: flex;
+}
+.card{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    position: relative;
+    min-width: 250px;
+    min-height: 150px;
+    margin-left: 2em;
+    margin-top: 2em;
+    background-color:#F582A7;
+    border-radius: 10px;
+}
+svg{
+    position: absolute;
+    width: 50px;
+    right: 0;
+}
+span{
+    position: absolute;
+    right: 18px;
+    top: 13px;
+}
+.nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 300px;
+}
+#contenedorCripto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+label{
+    color:#180A0A;
+    font-size: medium;
+    font-weight: bold;
+    bottom: 5px;
+}
+.button{
+    background-color:#F10086;
+    padding: 1em;
+    color:#180A0A;
+    border-radius:5px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    font-size: medium;
+    font-weight: bold;
+    bottom: 5px;
+}
