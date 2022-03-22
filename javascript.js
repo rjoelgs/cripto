@@ -1,14 +1,16 @@
 const divRender = document.querySelector('.render');
-const input = document.querySelector('#cripto')
+const input = document.querySelector('#cripto');
+const todasCriptoBtn = document.querySelector('.button');
 
-document.addEventListener('DOMContentLoaded', generarFetch);
+document.addEventListener('DOMContentLoaded', generarFetch('https://api.coincap.io/v2/assets?limit=10'));
 document.addEventListener('keydown', buscar); 
+document.addEventListener('click', todasCripto);
 
 
 
 
-function generarFetch(){
- fetch('https://api.coincap.io/v2/assets?limit=10')
+function generarFetch(url){
+ fetch(url)
 
  .then ((respuesta)=>{ return respuesta.json() })
  .then ((respuesta)=>{ dibujar( respuesta ) })
@@ -25,6 +27,7 @@ criptomonedas.map((moneda)=>{
    <svg width="50px" height="50px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path fill="#000" d="M255 471L91.7 387V41h328.6v346zm-147.3-93.74L255 453l149.3-75.76V57H107.7zm146.56-33.1l-94.66-48.69v50l94.54 48.62 98.27-49.89v-49.9z"/></svg>
    </div>
    <br>
+   <h2>${moneda.symbol}</h2>
    <h2>${moneda.id}</h2>
    <p>${moneda.priceUsd}</p>
    <button class="open-modal">Ver mas...</button>
@@ -52,3 +55,12 @@ gsap.from(".img", {
   ease: "elastic", 
   force3D: true
 });
+
+function todasCripto(){
+  while(divRender.firstChild){
+    divRender.removeChild(divRender.firstChild);
+  }
+
+  generarFetch('https://api.coincap.io/v2/assets')
+
+}

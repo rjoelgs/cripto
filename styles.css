@@ -31,6 +31,9 @@ main{
     margin-top: 2em;
     background-color:#F582A7;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center
 }
 svg{
     position: absolute;
@@ -69,4 +72,5 @@ label{
     font-size: medium;
     font-weight: bold;
     bottom: 5px;
+    cursor: pointer;
 }
