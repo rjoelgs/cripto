@@ -25,8 +25,9 @@ main{
 .card{
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     position: relative;
-    min-width: 250px;
-    min-height: 150px;
+    min-width: 200px;
+    min-height: 100px;
+    max-height: 120px;
     margin-left: 2em;
     margin-top: 2em;
     background-color:#F582A7;
@@ -40,16 +41,13 @@ svg{
     width: 50px;
     right: 0;
 }
-span{
-    position: absolute;
-    right: 18px;
-    top: 13px;
-}
+
 .nav{
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 300px;
+    justify-content: flex-start;
 }
 #contenedorCripto{
     display: flex;
@@ -57,7 +55,7 @@ span{
     justify-content: center;
 }
 label{
-    color:#180A0A;
+    color:#F582A7;
     font-size: medium;
     font-weight: bold;
     bottom: 5px;
@@ -74,3 +72,24 @@ label{
     bottom: 5px;
     cursor: pointer;
 }
+.hiden{
+    display: none;
+}
+.rank{
+    width:40px;
+    height:40px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    text-align:center;
+    color:#180A0A;
+    border-radius:30px;
+    position: absolute;
+    right: 0;
+    /* border: 2px solid #180A0A; */
+}
+.rank span{
+    font-size:1.5em;
+    position: relative;
+    top: 5px;
+}
+
+
