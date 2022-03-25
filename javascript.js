@@ -1,3 +1,5 @@
+import {animacion} from './animacion.js'
+
 const divRender = document.querySelector('.render');
 const input = document.querySelector('#cripto');
 const todasCriptoBtn = document.querySelector('#buttonTodas');
@@ -11,18 +13,16 @@ volverBtn.addEventListener('click', volver);
 capitalizacion.addEventListener('click', capitalizacionCripto);
 
 
-
+animacion();
 
 function generarFetch(url){
  fetch(url)
-
  .then ((respuesta)=>{ return respuesta.json() })
  .then ((respuesta)=>{ dibujar( respuesta ) })
  .catch(error => console.log('error', error));
 }
 
 function dibujar(resultado){
-  
 const criptomonedas = resultado.data;
 criptomonedas.map((moneda)=>{
    const tag = document.createElement('div');
@@ -72,18 +72,9 @@ function mostrar(dato) {
    `
    tag.setAttribute('class', 'card');
    divRender.appendChild(tag);
-
 }
 
-gsap.from(".img", {
-  duration: 2,
-  scale: 0.5, 
-  opacity: 0, 
-  delay: 0.5, 
-  stagger: 0.2,
-  ease: "elastic", 
-  force3D: true
-});
+
 
 function todasCripto(){
   while(divRender.firstChild){
@@ -124,20 +115,20 @@ function convertir(resultado){
                 label: 'capitalización',
                 data: [datos[0].marketCapUsd, datos[1].marketCapUsd, datos[2].marketCapUsd, datos[3].marketCapUsd, datos[4].marketCapUsd, datos[5].marketCapUsd],
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
+                    '#721A75',
+                    '#9F234B',
+                    '#98AE26',
+                    '#2C5D00',
+                    '#420044',
+                    '#B94067'
                 ],
                 borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
+                  '#721A75',
+                  '#9F234B',
+                  '#98AE26',
+                  '#2C5D00',
+                  '#420044',
+                  '#B94067'
                 ],
                 borderWidth: 1
             }]
@@ -145,6 +136,8 @@ function convertir(resultado){
        
     });
 
+
+    volverBtn.style.display = 'block'
   }
 
 
