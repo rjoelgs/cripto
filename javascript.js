@@ -100,7 +100,7 @@ function capitalizacionCripto(){
 }
 
 function convertir(resultado){
-  datos = resultado.data
+  const datos = resultado.data
   console.log(datos)
 
     const canvas = document.createElement('canvas');
